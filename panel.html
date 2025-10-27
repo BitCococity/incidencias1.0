@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Técnico · Incidencias</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-panel">
+  <div class="container">
+    <header class="header-page">
+      <h1>
+        Panel técnico
+        <span class="tag">Mantenimiento</span>
+      </h1>
+      <p>Listado de incidencias activas en el complejo. Selecciona tu nombre para asignarte trabajos. Cambia el estado conforme avances.</p>
+    </header>
+
+    <!-- QUIÉN SOY -->
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="row">
+        <div class="form-group">
+          <label for="select-tecnico">Soy:</label>
+          <select id="select-tecnico" name="select-tecnico">
+            <option value="">-- Selecciona técnico --</option>
+            <option value="Enrique">Enrique</option>
+            <option value="Tecnico 1">Tecnico 1</option>
+            <option value="Tecnico 2">Tecnico 2</option>
+            <option value="Tecnico 3">Tecnico 3</option>
+            <option value="Tecnico 4">Tecnico 4</option>
+            <option value="Tecnico 5">Tecnico 5</option>
+            <option value="Tecnico 6">Tecnico 6</option>
+            <option value="Tecnico 7">Tecnico 7</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Estado actual:</label>
+          <div id="whoami" class="whoami">🔧 Selecciona tu nombre</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="card">
+      <div class="filters-bar">
+        <button class="btn btn-small btn-neutral" data-estado="Todos">Todos</button>
+        <button class="btn btn-small btn-neutral" data-estado="Pendiente">Pendiente</button>
+        <button class="btn btn-small btn-neutral" data-estado="En curso">En curso</button>
+        <button class="btn btn-small btn-neutral" data-estado="Resuelto">Resuelto</button>
+
+        <select id="filtro-prioridad" class="btn btn-small btn-neutral" style="min-width:120px;">
+          <option value="Todas">Todas prioridades</option>
+          <option value="Urgente">Urgente</option>
+          <option value="Alta">Alta</option>
+          <option value="Normal">Normal</option>
+          <option value="Baja">Baja</option>
+        </select>
+
+        <input
+          id="filtro-buscar"
+          class="btn btn-small btn-neutral"
+          style="background:#0f172a;border:1px solid rgba(226,232,240,0.12);min-width:180px;"
+          placeholder="Buscar (apt, texto...)"
+        />
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Estado</th>
+              <th>Prio</th>
+              <th>Zona</th>
+              <th>Descripción</th>
+              <th>Asignado a</th>
+              <th>Última act.</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-incidencias">
+            <!-- Filas generadas por JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
