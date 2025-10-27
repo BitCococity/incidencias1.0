@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reportar Incidencia · Mantenimiento</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-reportar">
+  <div class="container">
+    <header class="header-page">
+      <h1>
+        Nueva incidencia
+        <span class="tag">Recepción</span>
+      </h1>
+      <p>Formulario para registrar averías, daños o problemas detectados por clientes o personal. Los campos con * son obligatorios.</p>
+    </header>
+
+    <div id="msg-ok" class="alert alert-success" style="display:none;"></div>
+    <div id="msg-err" class="alert alert-error" style="display:none;"></div>
+
+    <div class="card">
+      <form id="form-reportar">
+        <div class="form-group">
+          <label for="apartamento_zona">Apartamento / Zona *</label>
+          <input id="apartamento_zona" name="apartamento_zona" placeholder="Ej: Apto 203, Piscina, Lavandería..." required />
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="tipo">Tipo de incidencia</label>
+            <select id="tipo" name="tipo">
+              <option value="">Otro / General</option>
+              <option value="Fontanería">Fontanería</option>
+              <option value="Eléctrico">Eléctrico</option>
+              <option value="ACS / Caliente">ACS / Agua caliente</option>
+              <option value="Climatización">Climatización</option>
+              <option value="Mobiliario / Daños estéticos">Mobiliario / Estético</option>
+              <option value="Electrodoméstico / Equipo habitación">Electrodoméstico</option>
+              <option value="Piscina / Wellness">Piscina / Wellness</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="prioridad">Prioridad</label>
+            <select id="prioridad" name="prioridad">
+              <option value="Normal">Normal</option>
+              <option value="Alta">Alta</option>
+              <option value="Urgente">Urgente</option>
+              <option value="Baja">Baja</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion">Descripción *</label>
+          <textarea id="descripcion" name="descripcion" placeholder="Ej: Cliente dice que no sale agua caliente en la ducha del baño principal." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="reportado_por">Reportado por *</label>
+          <input id="reportado_por" name="reportado_por" placeholder="Nombre recepcionista / cliente" required />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Enviar incidencia</button>
+      </form>
+    </div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
